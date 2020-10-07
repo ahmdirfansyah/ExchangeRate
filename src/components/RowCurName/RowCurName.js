@@ -19,9 +19,9 @@ const RowCurName = ({data}) => {
                     items.map((element, index) => (
                         <tr key={element.curName}>
                             {index %2 !== 0 ? 
-                            <td className="border py-2 px-6 bg-white-100 text-center">{element.curName}{index}</td> 
+                            <td className="border py-2 px-6 bg-white-100 text-center">{element.curName}</td> 
                             : 
-                            <td className="border py-2 px-6 bg-gray-100 text-center">{element.curName}{index}</td> 
+                            <td className="border py-2 px-6 bg-gray-100 text-center">{element.curName}</td> 
                             }
                         </tr>
                    
