@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const getDataExchangeAction = () => {
+const GetExchangeAction = () => {
   return (dispatch) => {
     axios.get("https://api.exchangeratesapi.io/latest?base=IDR&symbols=IDR,USD,CAD,JPY,EUR,CHF")
     .then((response) => {
@@ -15,4 +15,4 @@ const getDataExchangeAction = () => {
   }
 }
 
-export default getDataExchangeAction;
+export default GetExchangeAction;

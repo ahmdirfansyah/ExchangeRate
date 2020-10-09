@@ -1,13 +1,12 @@
 import React from 'react';
-// import axios from 'axios';
 import { connect } from 'react-redux';
 
 import './App.css';
-import getDataExchangeAction from './actions/getDataExchangeAction';
-import RowExchange from './components/RowExchange/RowExchange';
-import RowBuy from './components/RowBuy/RowBuy';
-import RowCurName from './components/RowCurName/RowCurName';
-import RowSell from './components/RowSell/RowSell';
+import GetExchangeAction from './actions/GetExchangeAction';
+import Exchange from './components/Exchange';
+import Buy from './components/Buy';
+import CurrencyName from './components/CurrencyName';
+import Sell from './components/Sell';
 
 const App = (props) => {
 
@@ -25,39 +24,32 @@ for(let key in exchangeRate){
 
 
 
-// useEffect(() => {
-
-//     props.getDataRate();
-//   //   let dataRate = props.getDataRate();
-
-//   },[]);
-
  console.log(exchangeRate);
 
  
   return (
     <div className="App">
       
-      <div className="container2 mx-auto  h-screen ">
+      <div className="container mx-auto">
 
-        <table id="tableCur" className="table-auto mx-auto">
+        <table className="table-auto">
           <thead>
             <tr>
-              <th className="px-4 py-2"></th>
-              <th className="px-4 py-2">We Buy</th>
-              <th className="px-4 py-2">Exchange Rate</th>
-              <th className="px-4 py-2">We Sell</th>
+              <th className="w-1/1 px-1 py-1"></th>
+              <th className="w-1/1 px-1 py-1">We Buy</th>
+              <th className="w-1/1 px-1 py-1">Exch. Rate</th>
+              <th className="w-1/1 px-1 py-1">We Sell</th>
             </tr>
           </thead>
           <tbody>
 
         
               
-              <tr>
-                 <td className=" px-4 py-2"><RowCurName data={props.rates}/></td> 
-                 <td className=" px-4 py-2"><RowBuy data={props.rates}/></td>
-                 <td className=" px-4 py-2"><RowExchange data={props.rates}/></td>
-                 <td className=" px-4 py-2"><RowSell data={props.rates}/></td>
+              <tr class="bg-gray-100">
+                 <th className="border px-2 py-2"><CurrencyName data={props.rates}/></th> 
+                 <td className="border px-2 py-2 italic"><Buy data={props.rates}/></td>
+                 <td className="border px-2 py-2 italic"><Exchange data={props.rates}/></td>
+                 <td className="border px-2 py-2 italic"><Sell data={props.rates}/></td>
                   
             </tr>
             
@@ -82,7 +74,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   
   return {
-    getDataRate : () => dispatch(getDataExchangeAction()),
+    getDataRate : () => dispatch(GetExchangeAction()),
   }
 }
 

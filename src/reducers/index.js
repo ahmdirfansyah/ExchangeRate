@@ -2,10 +2,10 @@
 import { combineReducers } from 'redux';
 
 // Import all reducer
-import getDataExchangeReducer from './getDataExchangeReducer';
+import GetExchangeReducer from './GetExchangeReducer';
 
 const rootReducer = combineReducers({
-  dataExchange: getDataExchangeReducer,
+  dataExchange: GetExchangeReducer,
 })
 
 export default rootReducer;

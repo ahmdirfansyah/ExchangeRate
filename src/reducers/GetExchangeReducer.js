@@ -1,7 +1,7 @@
 // Reducer Kedua
 const initialRates = {};
 
-const getDataExchangeReducer = (state = initialRates, action) => {
+const GetExchangeReducer = (state = initialRates, action) => {
   if (action.type === 'GET_EXCHANGE_RATE') {
     
       return action.rates;
@@ -10,4 +10,4 @@ const getDataExchangeReducer = (state = initialRates, action) => {
   return state;
 }
 
-export default getDataExchangeReducer;
+export default GetExchangeReducer;
